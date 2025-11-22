@@ -42,6 +42,14 @@ fun ImagingScreen(
             imageCaptureResolutionSelector = ResolutionSelector.Builder()
                 .setResolutionStrategy(ResolutionStrategy.HIGHEST_AVAILABLE_STRATEGY)
                 .build()
+            setImageAnalysisResolutionSelector(
+                ResolutionSelector.Builder()
+                    .setResolutionStrategy(ResolutionStrategy.LOWEST_AVAILABLE_STRATEGY)
+                    .build()
+            )
+            setImageAnalysisAnalyzer(
+                ContextCompat.getMainExecutor(context),
+                analyzer
         }
     }
 
